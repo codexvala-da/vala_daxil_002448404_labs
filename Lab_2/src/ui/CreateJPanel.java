@@ -45,8 +45,14 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtDate = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+        setForeground(new java.awt.Color(0, 204, 204));
+
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setText("Create Vital Signs");
+
+        createPageInternalPanel.setBackground(new java.awt.Color(0, 204, 204));
+        createPageInternalPanel.setForeground(new java.awt.Color(0, 204, 204));
 
         jLabel2.setText("Temperature");
 

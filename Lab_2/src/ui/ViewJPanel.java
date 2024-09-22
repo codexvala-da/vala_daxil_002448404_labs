@@ -50,8 +50,13 @@ public class ViewJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblView = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+        setForeground(new java.awt.Color(0, 204, 204));
+
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setText("View vital signs");
+
+        jPanelToDeleteAndView.setBackground(new java.awt.Color(0, 204, 204));
 
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +174,8 @@ public class ViewJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblView.setSelectionBackground(new java.awt.Color(153, 0, 0));
+        tblView.setSelectionForeground(new java.awt.Color(0, 204, 204));
         jScrollPane1.setViewportView(tblView);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -250,6 +257,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             history.removeVitals(selectedVitalSigns);
             JOptionPane.showMessageDialog(jPanelToDeleteAndView, "Deleted successfully", "success", JOptionPane.INFORMATION_MESSAGE);
         }
+        
         populateTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
