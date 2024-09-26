@@ -29,8 +29,8 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         txtRoutingNumber.setText( selectedAccount.getRoutingNumber());
         txtAccountNumber.setText( selectedAccount.getAccountNumber());
         txtBankName.setText(selectedAccount.getBankName());
-        userProcessContainer = userProcessContainer;
-        accountDirectory = accountDirectory;
+        this.userProcessContainer = userProcessContainer;
+        this.accountDirectory = accountDirectory;
         account = selectedAccount;
     }
 
@@ -91,28 +91,23 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
                 .addComponent(btnBack)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblViewAccount)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblViewAccount)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSave)
                         .addGap(18, 18, 18)
-                        .addComponent(btnUpdate)
-                        .addGap(60, 60, 60))
+                        .addComponent(btnUpdate))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblRoutingNumber)
                             .addComponent(lblBankName)
                             .addComponent(lblAccountNumber))
-                        .addGap(103, 103, 103)
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAccountNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRoutingNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBankName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtBankName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAccountNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRoutingNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
