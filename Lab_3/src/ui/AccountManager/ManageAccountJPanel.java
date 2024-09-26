@@ -5,7 +5,10 @@
 package ui.AccountManager;
 
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Account;
 import model.AccountDirectory;
 
 /**
@@ -24,6 +27,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         initComponents();
         userProcessContainer = container;
         accountDirectory = directory;
+        populateTable();
     }
 
     /**
@@ -72,6 +76,11 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         btnViewDetails.setText("View details");
         btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
@@ -137,11 +146,61 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        
+        if (selectedRow>=0){
+            Account selectedAccount = (Account) jTable1.getValueAt(selectedRow, 0);
+            
+            ViewAccountJPanel viewAccountJPanel = new ViewAccountJPanel(userProcessContainer,accountDirectory,selectedAccount);
+            
+            userProcessContainer.add("ViewAccountJPanel",viewAccountJPanel);
+        
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Please select an account first", "No selection made", JOptionPane.ERROR_MESSAGE);
+
+        }
+
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
     private void btnDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccountActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        
+        if (selectedRow>=0){
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?", "Warning", JOptionPane.WARNING_MESSAGE);
+            Account selectedAccount = (Account) jTable1.getValueAt(selectedRow, 0);
+            accountDirectory.deleteAccount(selectedAccount);
+            populateTable();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Please select an account first", "No selection made", JOptionPane.ERROR_MESSAGE);
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteAccountActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        if(!txtSearch.getText().isBlank()){
+            String accountNumber = txtSearch.getText();
+            Account searchedAccount = accountDirectory.searchAccount(accountNumber);
+            
+            if(searchedAccount!=null){
+                ViewAccountJPanel viewPanel = new ViewAccountJPanel(userProcessContainer, accountDirectory, searchedAccount);
+                userProcessContainer.add("ViewAccountJPanel",viewPanel);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+            } else {
+                JOptionPane.showMessageDialog(this, "No account exist with this number", "Not found", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Please provide an account number!", "Invalid input", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -154,4 +213,19 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblManageAcoount;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+    public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        for(Account a : accountDirectory.getAccounts()){
+            Object[]row = new Object[4];
+            
+            row[0]=a;
+            row[1]=a.getRoutingNumber();
+            row[2]=a.getBankName();
+            row[3]=a.getBalance();
+            
+            model.addRow(row);
+        }
+    }
 }
