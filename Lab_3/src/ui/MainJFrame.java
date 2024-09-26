@@ -4,8 +4,11 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import javax.swing.JSplitPane;
 import model.Account;
 import model.AccountDirectory;
+import ui.AccountManager.AccountManagerWorkAreaJPanel;
 
 /**
  *
@@ -42,7 +45,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         mainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        topJPanel.setPreferredSize(new java.awt.Dimension(400, 50));
+        topJPanel.setPreferredSize(new java.awt.Dimension(400, 100));
 
         btnAccountManager.setText("Open account manager work area");
         btnAccountManager.addActionListener(new java.awt.event.ActionListener() {
@@ -56,16 +59,16 @@ public class MainJFrame extends javax.swing.JFrame {
         topJPanelLayout.setHorizontalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addContainerGap(140, Short.MAX_VALUE)
                 .addComponent(btnAccountManager)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         topJPanelLayout.setVerticalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAccountManager)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
 
         mainSplitPane.setTopComponent(topJPanel);
@@ -77,11 +80,11 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainSplitPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(mainSplitPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainSplitPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(mainSplitPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
         );
 
         pack();
@@ -89,6 +92,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnAccountManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountManagerActionPerformed
         // TODO add your handling code here:
+        AccountManagerWorkAreaJPanel accMngrPnl = new AccountManagerWorkAreaJPanel(userProcessContainer, accountDirectory);
+        userProcessContainer.add("AccountManagerWorkAreaJPanel",accMngrPnl);
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_btnAccountManagerActionPerformed
 
     /**

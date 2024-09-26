@@ -4,17 +4,26 @@
  */
 package ui.AccountManager;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import model.AccountDirectory;
+
 /**
  *
  * @author apple
  */
 public class ManageAccountJPanel extends javax.swing.JPanel {
 
+    JPanel userProcessContainer;
+    AccountDirectory accountDirectory;
+    
     /**
      * Creates new form ManageAccountJPanel
      */
-    public ManageAccountJPanel() {
+    public ManageAccountJPanel(JPanel container, AccountDirectory directory) {
         initComponents();
+        userProcessContainer = container;
+        accountDirectory = directory;
     }
 
     /**
@@ -94,7 +103,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                     .addComponent(btnViewDetails)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                        .addGap(67, 67, 67)
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 183, Short.MAX_VALUE))
         );
@@ -119,6 +128,10 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackActionPerformed
 

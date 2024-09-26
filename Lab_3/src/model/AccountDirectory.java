@@ -12,6 +12,10 @@ import java.util.ArrayList;
  */
 public class AccountDirectory {
     ArrayList<Account> accounts;
+    
+    public AccountDirectory() {
+        accounts = new ArrayList<>();
+    }
 
     public ArrayList<Account> getAccounts() {
         return accounts;

@@ -4,17 +4,26 @@
  */
 package ui.AccountManager;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import model.AccountDirectory;
+
 /**
  *
  * @author apple
  */
 public class CreateAccountJPanel extends javax.swing.JPanel {
 
+    JPanel userProcessContainer;
+    AccountDirectory accountDirectory;
+    
     /**
      * Creates new form CreateAccountJPanel
      */
-    public CreateAccountJPanel() {
+    public CreateAccountJPanel(JPanel container, AccountDirectory directory) {
         initComponents();
+        userProcessContainer = container;
+        accountDirectory = directory;
     }
 
     /**
@@ -38,6 +47,11 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         txtBalance = new javax.swing.JTextField();
 
         btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         lblCreateAccount.setText("Create Account");
 
@@ -72,7 +86,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
                         .addComponent(lblRoutingNumber)
                         .addGap(80, 80, 80)
                         .addComponent(txtRoutingNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(203, 203, 203))
+                .addContainerGap(203, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
@@ -107,6 +121,14 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
                 .addContainerGap(186, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
