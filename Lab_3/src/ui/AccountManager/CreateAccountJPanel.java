@@ -49,6 +49,8 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         txtBalance = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +58,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblCreateAccount.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblCreateAccount.setText("Create Account");
 
         lblRoutingNumber.setText("Routing Number");
@@ -135,7 +138,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
                     .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCreate)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

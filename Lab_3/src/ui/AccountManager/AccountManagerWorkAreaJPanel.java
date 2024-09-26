@@ -38,6 +38,8 @@ public class AccountManagerWorkAreaJPanel extends javax.swing.JPanel {
         btnCreateAccount = new javax.swing.JButton();
         btnManageAccount = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         btnCreateAccount.setText("Create Account");
         btnCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

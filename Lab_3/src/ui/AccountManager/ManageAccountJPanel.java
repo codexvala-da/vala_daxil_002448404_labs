@@ -48,6 +48,8 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         btnDeleteAccount = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,8 +57,11 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblManageAcoount.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblManageAcoount.setText("Manage Account");
 
+        jTable1.setBackground(new java.awt.Color(0, 0, 0));
+        jTable1.setForeground(new java.awt.Color(204, 204, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -73,6 +78,8 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setSelectionBackground(new java.awt.Color(204, 0, 102));
+        jTable1.setSelectionForeground(new java.awt.Color(255, 204, 204));
         jScrollPane1.setViewportView(jTable1);
 
         btnSearch.setText("Search");
@@ -132,7 +139,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                 .addComponent(btnViewDetails)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteAccount)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

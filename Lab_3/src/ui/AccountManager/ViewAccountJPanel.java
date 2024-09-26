@@ -54,6 +54,8 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +63,7 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblViewAccount.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblViewAccount.setText("View Account");
 
         lblRoutingNumber.setText("Routing number");
@@ -89,11 +92,10 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnBack)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addGap(0, 388, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblViewAccount)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSave)
                         .addGap(18, 18, 18)
@@ -107,8 +109,12 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtBankName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAccountNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRoutingNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(75, Short.MAX_VALUE))
+                            .addComponent(txtRoutingNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblViewAccount)
+                        .addGap(114, 114, 114)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +122,7 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
                 .addComponent(btnBack)
                 .addGap(18, 18, 18)
                 .addComponent(lblViewAccount)
-                .addGap(41, 41, 41)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRoutingNumber)
                     .addComponent(txtRoutingNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -129,10 +135,10 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
                     .addComponent(lblBankName)
                     .addComponent(txtBankName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnUpdate))
-                .addGap(0, 85, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnSave))
+                .addGap(0, 86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
