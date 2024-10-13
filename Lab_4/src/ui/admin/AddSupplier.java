@@ -214,6 +214,7 @@ public class AddSupplier extends javax.swing.JPanel {
                 url = file.toURI().toURL();
                 logoImage = new ImageIcon(url);
                 logoImage = new ImageIcon(logoImage.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH));
+                imgLogo.setIcon(logoImage);
                 
             }
             catch(MalformedURLException ex){

@@ -14,14 +14,14 @@ public class Feature {
     private String name;
     private String value;
 
+    public Feature(Product owner) {
+        this.owner = owner;
+    }
+
     public Feature(Product owner, String name, String value) {
         this.owner = owner;
         this.name = name;
         this.value = value;
-    }
-
-    public Feature(Product owner) {
-        this.owner = owner;
     }
 
     public Product getOwner() {
@@ -31,6 +31,7 @@ public class Feature {
     public void setOwner(Product owner) {
         this.owner = owner;
     }
+
 
     public String getName() {
         return name;
