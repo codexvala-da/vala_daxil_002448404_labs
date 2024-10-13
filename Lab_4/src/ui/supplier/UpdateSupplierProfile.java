@@ -40,6 +40,7 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
         
         this.workArea = mainWorkArea;
         txtName.setText(supplier.getSupplyName());
+        jTextArea1.setText(supplier.getDescription());
         this.supplier = supplier;
         if (supplier.getLogoImage() != null) imgLogo.setIcon(supplier.getLogoImage());
         else imgLogo.setText("No logo");
@@ -70,6 +71,9 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         lblTitle = new javax.swing.JLabel();
         btnUpdateSupplier = new javax.swing.JButton();
+        lblDescription = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         backButton.setText("<< Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +113,12 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
             }
         });
 
+        lblDescription.setText("Description:");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,7 +129,7 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
                 .addGap(38, 38, 38)
                 .addComponent(lblTitle)
                 .addContainerGap(284, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -139,7 +149,11 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnAttach, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblDescription)
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,7 +167,11 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDescription)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAttach)
@@ -161,9 +179,9 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
                         .addComponent(btnRemove))
                     .addComponent(lblLogo)
                     .addComponent(imgLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(btnUpdateSupplier)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGap(98, 98, 98))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,6 +231,7 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
 
           return;
         }
+        supplier.setDescription(jTextArea1.getText());
         supplier.setSupplyName(txtName.getText());
         if (logoImage!=null) supplier.setLogoImage(logoImage);
 
@@ -227,6 +246,9 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
     private javax.swing.JButton btnRemove;
     private javax.swing.JButton btnUpdateSupplier;
     private javax.swing.JLabel imgLogo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblTitle;

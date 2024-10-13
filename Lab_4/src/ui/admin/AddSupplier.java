@@ -71,7 +71,7 @@ public class AddSupplier extends javax.swing.JPanel {
         backButton = new javax.swing.JButton();
         lblDescription = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescription = new javax.swing.JTextArea();
         lblLogo = new javax.swing.JLabel();
         imgLogo = new javax.swing.JLabel();
         btnAttach = new javax.swing.JButton();
@@ -99,9 +99,9 @@ public class AddSupplier extends javax.swing.JPanel {
 
         lblDescription.setText("Description:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescription.setColumns(20);
+        txtDescription.setRows(5);
+        jScrollPane1.setViewportView(txtDescription);
 
         lblLogo.setText("Logo:");
 
@@ -192,6 +192,7 @@ public class AddSupplier extends javax.swing.JPanel {
         // TODO add your handling code here:
         Supplier supplier = supplierDirectory.addSupplier();
         supplier.setSupplyName(txtName.getText());
+        supplier.setDescription(txtDescription.getText());
         supplier.setLogoImage(logoImage);
         
         JOptionPane.showMessageDialog(this, "Supplier successfully added", "Information", JOptionPane.INFORMATION_MESSAGE);
@@ -251,11 +252,11 @@ public class AddSupplier extends javax.swing.JPanel {
     private javax.swing.JButton btnRemove;
     private javax.swing.JLabel imgLogo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextArea txtDescription;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 
