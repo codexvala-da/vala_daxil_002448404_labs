@@ -12,9 +12,9 @@ package model;
 public class Feature {
     private  Product owner;
     private String name;
-    private Object value;
+    private String value;
 
-    public Feature(Product owner, String name, Object value) {
+    public Feature(Product owner, String name, String value) {
         this.owner = owner;
         this.name = name;
         this.value = value;
@@ -44,7 +44,7 @@ public class Feature {
         return value;
     }
 
-    public void setValue(Object value) {
+    public void setValue(String value) {
         this.value = value;
     }
     

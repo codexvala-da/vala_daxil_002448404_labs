@@ -105,10 +105,11 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "Feature Name", "Value"
+                "Feature name", "Value"
             }
         ));
         tblFeatures.setEnabled(false);
+        tblFeatures.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblFeatures);
 
         btnAddFeature.setText("Add Feature");
@@ -245,7 +246,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
        for(int i =0 ; i<model.getRowCount(); i++){
            Feature currentFeature = product.getFeatures().get(i);
            currentFeature.setName(tblFeatures.getValueAt(i, 0).toString());
-           currentFeature.setValue(tblFeatures.getValueAt(i, 1));
+           currentFeature.setValue(tblFeatures.getValueAt(i, 1).toString());
        }
     }
 
@@ -254,7 +255,6 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         Feature newFeature = product.addFeature();
         newFeature.setName("New feature");
         newFeature.setValue("Type value here");
-        saveFeatures();
         refreshTable();
         
        

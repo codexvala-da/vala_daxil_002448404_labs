@@ -110,6 +110,7 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
             
             if(product!=null){
                 ViewProductDetailJPanel viewPanel = new ViewProductDetailJPanel(workArea, product);
+                workArea.remove(this);
                 workArea.add("ViewProductDetailJPanel",viewPanel);
                 CardLayout layout = (CardLayout) workArea.getLayout();
                 layout.next(workArea);
