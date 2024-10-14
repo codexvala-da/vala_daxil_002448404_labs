@@ -62,7 +62,7 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         btnRemoveFeature = new javax.swing.JButton();
         imgLogo = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 204, 204));
 
         lblTitle.setText("View Product Details");
 

@@ -57,7 +57,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         splitPane.setDividerLocation(50);
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        menuBar.setBackground(new java.awt.Color(0, 153, 153));
 
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {

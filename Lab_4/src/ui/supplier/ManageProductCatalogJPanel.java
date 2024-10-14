@@ -65,7 +65,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         imgLogo = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 204, 204));
 
         lblTitle.setText("Manage Product Catalog");
 
