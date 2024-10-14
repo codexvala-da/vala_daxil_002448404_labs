@@ -221,8 +221,11 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void backAction() {
-        CardLayout layout = (CardLayout) workArea.getLayout();
         workArea.remove(this);
+        Component[] components = workArea.getComponents();
+        ManageProductCatalogJPanel manageProductCatalogJPanel = (ManageProductCatalogJPanel) components[components.length - 1];
+        manageProductCatalogJPanel.refreshImageLogo();
+        CardLayout layout = (CardLayout) workArea.getLayout();
         layout.previous(workArea);
     }
 
@@ -235,7 +238,9 @@ public class UpdateSupplierProfile extends javax.swing.JPanel {
         }
         supplier.setDescription(jTextArea1.getText());
         supplier.setSupplyName(txtName.getText());
-        if (logoImage!=null) supplier.setLogoImage(logoImage);
+        if (logoImage!=null) {
+            supplier.setLogoImage(logoImage);
+        }
 
         JOptionPane.showMessageDialog(this, "Supplier successfully updated", "Information", JOptionPane.INFORMATION_MESSAGE);
         backAction();

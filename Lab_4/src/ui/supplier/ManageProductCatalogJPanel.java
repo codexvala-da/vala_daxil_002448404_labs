@@ -8,6 +8,7 @@ package ui.supplier;
 import model.Product;
 import model.Supplier;
 import java.awt.CardLayout;
+import java.awt.Image;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -48,6 +49,9 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         }
     }
 
+    public void refreshImageLogo(){
+        imgLogo.setIcon(supplier.getLogoImage());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
