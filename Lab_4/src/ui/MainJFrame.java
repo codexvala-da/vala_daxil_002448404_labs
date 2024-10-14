@@ -24,7 +24,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         
         supplierDirectory = new SupplierDirectory();
-        setSize(775,600);
+        setSize(800,600);
         setResizable(false);
         populateDemoData();
         
