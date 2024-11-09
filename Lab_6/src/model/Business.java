@@ -6,9 +6,10 @@ package model;
 
 /**
  *
- * @author apple
+ * @author viralsuchak
  */
 public class Business {
+    
     MasterOrderList masterorderList;
     SupplierDirectory supplierDirectory;
 
@@ -33,4 +34,7 @@ public class Business {
     public void setSupplierDirectory(SupplierDirectory supplierDirectory) {
         this.supplierDirectory = supplierDirectory;
     }
+    
+    
+    
 }

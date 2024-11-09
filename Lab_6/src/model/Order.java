@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author apple
+ * @author viralsuchak
  */
 public class Order {
-   
+    
     ArrayList<OrderItem> orderItemList;
 
     public Order() {
@@ -45,4 +45,5 @@ public class Order {
     public void deleteItem(OrderItem item){
         this.orderItemList.remove(item);
     }
+    
 }

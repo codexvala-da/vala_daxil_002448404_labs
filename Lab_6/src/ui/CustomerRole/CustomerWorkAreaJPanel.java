@@ -26,7 +26,6 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     SupplierDirectory supplierDirectory;
     MasterOrderList masterOrderList;
 
-
     /** Creates new form ProductManagerWorkAreaJPanel */
     public CustomerWorkAreaJPanel(JPanel userProcessContainer,SupplierDirectory supplierDirectory,MasterOrderList masterOrderList) {
         initComponents();
@@ -87,11 +86,12 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     private void btnBrowseCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseCatalogActionPerformed
-        // TODO add your handling code here:
+        
         BrowseProductsJPanel bp = new BrowseProductsJPanel(userProcessContainer, supplierDirectory, masterOrderList);
         userProcessContainer.add("BrowseProductsJPanel", bp);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_btnBrowseCatalogActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

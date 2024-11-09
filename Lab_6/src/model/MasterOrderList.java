@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author apple
+ * @author viralsuchak
  */
 public class MasterOrderList {
-   
+    
     ArrayList<Order> orderList;
 
     public MasterOrderList() {
@@ -30,4 +30,6 @@ public class MasterOrderList {
     public void addNewOrder(Order order){
         this.orderList.add(order);
     }
+    
+    
 }

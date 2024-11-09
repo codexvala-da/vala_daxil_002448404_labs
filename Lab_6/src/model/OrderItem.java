@@ -6,10 +6,11 @@ package model;
 
 /**
  *
- * @author apple
+ * @author viralsuchak
  */
 public class OrderItem {
-   Product product;
+    
+    Product product;
     double salesPrice;
     int quantity;
 
@@ -46,5 +47,6 @@ public class OrderItem {
     @Override
     public String toString(){
         return product.toString();
-    } 
+    }
+    
 }

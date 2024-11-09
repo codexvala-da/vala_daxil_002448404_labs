@@ -34,6 +34,7 @@ public class ViewSupplierJPanel extends javax.swing.JPanel {
             row[2] = p.getPrice();
             model.addRow(row);
         }
+        
     }
     
     @SuppressWarnings("unchecked")

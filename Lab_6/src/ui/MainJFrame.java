@@ -22,8 +22,8 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    SupplierDirectory supplierDirectory;
     Business business;
+    SupplierDirectory supplierDirectory;
     MasterOrderList masterOrderList;
     
     public MainJFrame() {
@@ -48,10 +48,6 @@ public class MainJFrame extends javax.swing.JFrame {
         btnAdmin = new javax.swing.JButton();
         btnSupplier = new javax.swing.JButton();
         btnCustomer = new javax.swing.JButton();
-        controlPanel1 = new javax.swing.JPanel();
-        btnAdmin1 = new javax.swing.JButton();
-        btnSupplier1 = new javax.swing.JButton();
-        btnCustomer1 = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,59 +74,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnCustomer.setText("Customer");
-        btnCustomer.setEnabled(false);
         btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomerActionPerformed(evt);
             }
         });
-
-        controlPanel1.setBackground(new java.awt.Color(240, 240, 240));
-
-        btnAdmin1.setText("Administrator");
-        btnAdmin1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdmin1ActionPerformed(evt);
-            }
-        });
-
-        btnSupplier1.setText("Supplier");
-        btnSupplier1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSupplier1ActionPerformed(evt);
-            }
-        });
-
-        btnCustomer1.setText("Customer");
-        btnCustomer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCustomer1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout controlPanel1Layout = new javax.swing.GroupLayout(controlPanel1);
-        controlPanel1.setLayout(controlPanel1Layout);
-        controlPanel1Layout.setHorizontalGroup(
-            controlPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(controlPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCustomer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAdmin1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSupplier1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        controlPanel1Layout.setVerticalGroup(
-            controlPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanel1Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(btnAdmin1)
-                .addGap(18, 18, 18)
-                .addComponent(btnSupplier1)
-                .addGap(18, 18, 18)
-                .addComponent(btnCustomer1)
-                .addContainerGap(374, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -143,11 +91,6 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(btnAdmin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(controlPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(controlPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdmin, btnCustomer, btnSupplier});
@@ -162,11 +105,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCustomer)
                 .addContainerGap(374, Short.MAX_VALUE))
-            .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(controlPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(controlPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -207,38 +145,13 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSupplierActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
-
+        
         CustomerWorkAreaJPanel cwap = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory, masterOrderList);
         userProcessContainer.add("CustomerWorkAreaJPanel", cwap);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
     }//GEN-LAST:event_btnCustomerActionPerformed
-
-    private void btnAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdmin1ActionPerformed
-
-        AdminWorkAreaJPanel awajp = new AdminWorkAreaJPanel(userProcessContainer, supplierDirectory);
-        userProcessContainer.add("AdminWorkAreaJPanel",awajp);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnAdmin1ActionPerformed
-
-    private void btnSupplier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplier1ActionPerformed
-
-        LoginSupplierJPanel ls = new LoginSupplierJPanel(userProcessContainer, supplierDirectory);
-        userProcessContainer.add("LoginSupplierJPanel", ls);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnSupplier1ActionPerformed
-
-    private void btnCustomer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomer1ActionPerformed
-
-        CustomerWorkAreaJPanel cwap = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory, masterOrderList);
-        userProcessContainer.add("CustomerWorkAreaJPanel", cwap);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-
-    }//GEN-LAST:event_btnCustomer1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,13 +190,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmin;
-    private javax.swing.JButton btnAdmin1;
     private javax.swing.JButton btnCustomer;
-    private javax.swing.JButton btnCustomer1;
     private javax.swing.JButton btnSupplier;
-    private javax.swing.JButton btnSupplier1;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JPanel controlPanel1;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables

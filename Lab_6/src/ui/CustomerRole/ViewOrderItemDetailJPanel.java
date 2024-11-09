@@ -14,7 +14,6 @@ import model.OrderItem;
  */
 public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
 
-    
     JPanel userProcessContainer; 
     OrderItem orderitem;
     
@@ -23,6 +22,7 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
      */
     public ViewOrderItemDetailJPanel(JPanel userProcessContainer, OrderItem orderitem) {
         initComponents();
+        
         this.userProcessContainer = userProcessContainer;
         this.orderitem = orderitem;
         
@@ -31,6 +31,7 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
         txtSalesPrice.setText(String.valueOf(orderitem.getSalesPrice()));
         txtQuantity.setText(String.valueOf(orderitem.getQuantity()));
         txtTotal.setText(String.valueOf(orderitem.getQuantity() * orderitem.getSalesPrice()));
+        
     }
 
     /**
@@ -154,10 +155,10 @@ public class ViewOrderItemDetailJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
