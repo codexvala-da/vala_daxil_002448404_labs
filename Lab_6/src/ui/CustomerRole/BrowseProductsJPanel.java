@@ -450,12 +450,17 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Price should be more than set in price");
             return;
         }
+        System.out.println("Product Name: "+ product);
         OrderItem item = currentOrder.findProduct(product);
+        System.out.println("Order Item: "+ item);
         if(item == null){
        
             if(product.getAvail() >= quant){
+                //System.out.println("Product Name"+ product.getProdName());
+                System.out.println("Product quant"+ quant);
                 currentOrder.addNewOrderItem(product, salesPrice, quant);
                 product.setAvail(product.getAvail() - quant);
+                System.out.println("Product avail new"+ product.getAvail());
 
             }else{
                  JOptionPane.showMessageDialog(this, "Please check Product availability");
